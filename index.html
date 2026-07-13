@@ -588,6 +588,12 @@
         .bg-xbox { background: linear-gradient(135deg, #107C10 0%, #0B5A0B 100%); }
         .bg-biedronka { background: linear-gradient(135deg, #FFCC00 0%, #E30613 100%); }
         .bg-klarna { background: linear-gradient(135deg, #FFB3C7 0%, #FFA1B8 100%); }
+        .bg-edeka { background: linear-gradient(135deg, #005696 0%, #003764 100%); }
+        .bg-shein { background: linear-gradient(135deg, #111111 0%, #2A2A2A 100%); }
+        .bg-paypal { background: linear-gradient(135deg, #003087 0%, #0079C1 100%); }
+        .bg-lululemon { background: linear-gradient(135deg, #E31B23 0%, #860000 100%); }
+        .bg-cashapp { background: linear-gradient(135deg, #00D632 0%, #009E24 100%); }
+        .bg-chickfila { background: linear-gradient(135deg, #E51636 0%, #9E0016 100%); }
 
         .featured-card::after {
             content: '';
@@ -1595,6 +1601,127 @@
                         </div>
                         <button class="btn btn-primary btn-glow" style="width: 100%; margin-top: auto; padding: 10px; font-size: 0.85rem; font-weight: 700;" onclick="event.stopPropagation(); goToOffer('klarna');">Claim Now</button>
                     </div>
+
+                    <!-- EDEKA -->
+                    <div class="featured-card glass reveal-element" onclick="goToOffer('edeka')">
+                        <div class="brand-icon-wrap bg-edeka">
+                            <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="10" y="10" width="80" height="80" rx="12" fill="#FFCC00" stroke="#005696" stroke-width="5" />
+                                <path d="M30 28 H70 V40 H48 V49 H65 V59 H48 V68 H70 V80 H30 Z" fill="#005696" />
+                            </svg>
+                        </div>
+                        <h3 class="card-brand-name" style="margin-bottom: 2px;">EDEKA</h3>
+                        <div class="card-offer-name" style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted); margin: 0 0 8px 0; line-height: 1.2;">Win a €250 EDEKA Voucher</div>
+                        <div class="card-country-info" style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted); display: flex; align-items: center; gap: 6px;">
+                            <span>🇩🇪</span> <span>Germany</span>
+                        </div>
+                        <div class="card-bottom">
+                            <span class="card-amount">€250</span>
+                            <span class="badge badge-success" style="font-size: 0.7rem; font-weight: 700; padding: 3px 8px;">✅ Available</span>
+                        </div>
+                        <button class="btn btn-primary btn-glow" style="width: 100%; margin-top: auto; padding: 10px; font-size: 0.85rem; font-weight: 700;" onclick="event.stopPropagation(); goToOffer('edeka');">Claim Now</button>
+                    </div>
+
+                    <!-- SHEIN -->
+                    <div class="featured-card glass reveal-element" onclick="goToOffer('shein')">
+                        <div class="brand-icon-wrap bg-shein">
+                            <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M35 35 C35 25, 65 25, 65 38 C65 48, 35 48, 35 58 C35 70, 65 70, 65 60" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" fill="none" />
+                                <circle cx="50" cy="50" r="42" stroke="rgba(255, 255, 255, 0.2)" stroke-width="3" />
+                            </svg>
+                        </div>
+                        <h3 class="card-brand-name" style="margin-bottom: 2px;">SHEIN</h3>
+                        <div class="card-offer-name" style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted); margin: 0 0 8px 0; line-height: 1.2;">Halloween SHEIN</div>
+                        <div class="card-country-info" style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted); display: flex; align-items: center; gap: 6px;">
+                            <span>🇨🇦</span> <span>Canada</span>
+                        </div>
+                        <div class="card-bottom">
+                            <span class="card-amount" style="font-size: 1.05rem;">Halloween Reward</span>
+                            <span class="badge badge-success" style="font-size: 0.7rem; font-weight: 700; padding: 3px 8px;">✅ Available</span>
+                        </div>
+                        <button class="btn btn-primary btn-glow" style="width: 100%; margin-top: auto; padding: 10px; font-size: 0.85rem; font-weight: 700;" onclick="event.stopPropagation(); goToOffer('shein');">Claim Now</button>
+                    </div>
+
+                    <!-- PayPal -->
+                    <div class="featured-card glass reveal-element" onclick="goToOffer('paypal')">
+                        <div class="brand-icon-wrap bg-paypal">
+                            <svg width="26" height="28" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.2 8.3C18.2 4.1 14.7 1 10.1 1H3.6c-.7 0-1.2.5-1.3 1.2L0.1 16.4c-.1.5.3 1 1 1h4.2l-1.3 8.3c-.1.6.4 1.1 1 1.1h5.3c.6 0 1.1-.4 1.2-1l1.5-9.6H14c4.6 0 8.1-2.3 8.1-6.5" fill="#FFFFFF" />
+                                <path d="M14 9.1c0 3.3-2.5 5.5-5.9 5.5H5.8L7.1 5.5h2.3c3.4 0 5.9 1.6 5.9 4.9z" fill="#003087" opacity="0.4" />
+                            </svg>
+                        </div>
+                        <h3 class="card-brand-name" style="margin-bottom: 2px;">PayPal</h3>
+                        <div class="card-offer-name" style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted); margin: 0 0 8px 0; line-height: 1.2;">PayPal $100</div>
+                        <div class="card-country-info" style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted); display: flex; align-items: center; gap: 6px;">
+                            <span>🇺🇸</span> <span>United States</span>
+                        </div>
+                        <div class="card-bottom">
+                            <span class="card-amount" style="font-size: 1.05rem;">$100 PayPal Reward</span>
+                            <span class="badge badge-success" style="font-size: 0.7rem; font-weight: 700; padding: 3px 8px;">✅ Available</span>
+                        </div>
+                        <button class="btn btn-primary btn-glow" style="width: 100%; margin-top: auto; padding: 10px; font-size: 0.85rem; font-weight: 700;" onclick="event.stopPropagation(); goToOffer('paypal');">Claim Now</button>
+                    </div>
+
+                    <!-- Lululemon -->
+                    <div class="featured-card glass reveal-element" onclick="goToOffer('lululemon')">
+                        <div class="brand-icon-wrap bg-lululemon">
+                            <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 75C22 75, 27 65, 34 60C38 57, 41 53, 40 45C38 30, 44 22, 50 22C56 22, 62 30, 60 45C59 53, 62 57, 66 60C73 65, 78 75, 78 75" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                                <path d="M37 75C37 75, 41 71, 44 68C47 65, 47 60, 46 54C45 42, 47 34, 50 34C53 34, 55 42, 54 54C53 60, 53 65, 56 68C59 71, 63 75, 63 75" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                            </svg>
+                        </div>
+                        <h3 class="card-brand-name" style="margin-bottom: 2px;">Lululemon</h3>
+                        <div class="card-offer-name" style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted); margin: 0 0 8px 0; line-height: 1.2;">Lululemon Gift Card</div>
+                        <div class="card-country-info" style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted); display: flex; align-items: center; gap: 6px;">
+                            <span>🇺🇸</span> <span>United States</span>
+                        </div>
+                        <div class="card-bottom">
+                            <span class="card-amount">$100 Gift Card</span>
+                            <span class="badge badge-success" style="font-size: 0.7rem; font-weight: 700; padding: 3px 8px;">✅ Available</span>
+                        </div>
+                        <button class="btn btn-primary btn-glow" style="width: 100%; margin-top: auto; padding: 10px; font-size: 0.85rem; font-weight: 700;" onclick="event.stopPropagation(); goToOffer('lululemon');">Claim Now</button>
+                    </div>
+
+                    <!-- Cash App -->
+                    <div class="featured-card glass reveal-element" onclick="goToOffer('cashapp')">
+                        <div class="brand-icon-wrap bg-cashapp">
+                            <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M50 10v80M32 32c0 0, 10-10, 18-10s22 6, 22 16s-10 14-22 16s-22 6-22 18s12 18, 22 18s22-12, 22-12" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                            </svg>
+                        </div>
+                        <h3 class="card-brand-name" style="margin-bottom: 2px;">Cash App</h3>
+                        <div class="card-offer-name" style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted); margin: 0 0 8px 0; line-height: 1.2;">Cash App $750</div>
+                        <div class="card-country-info" style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted); display: flex; align-items: center; gap: 6px;">
+                            <span>🇺🇸</span> <span>United States</span>
+                        </div>
+                        <div class="card-bottom">
+                            <span class="card-amount" style="font-size: 1.05rem;">$750 Cash App Reward</span>
+                            <span class="badge badge-success" style="font-size: 0.7rem; font-weight: 700; padding: 3px 8px;">✅ Available</span>
+                        </div>
+                        <button class="btn btn-primary btn-glow" style="width: 100%; margin-top: auto; padding: 10px; font-size: 0.85rem; font-weight: 700;" onclick="event.stopPropagation(); goToOffer('cashapp');">Claim Now</button>
+                    </div>
+
+                    <!-- Chick-fil-A -->
+                    <div class="featured-card glass reveal-element" onclick="goToOffer('chickfila')">
+                        <div class="brand-icon-wrap bg-chickfila">
+                            <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M25 50 C25 35, 45 25, 65 30 C75 33, 80 40, 78 50 C75 60, 65 75, 45 75 C30 75, 25 65, 25 50 Z" fill="#FFFFFF" />
+                                <path d="M45 22 C45 15, 52 12, 55 18 C58 12, 65 15, 65 22 C65 25, 60 28, 55 28 Z" fill="#E51636" />
+                                <circle cx="48" cy="42" r="5" fill="#E51636" />
+                                <path d="M78 48 L88 52 L78 56 Z" fill="#FF9800" />
+                            </svg>
+                        </div>
+                        <h3 class="card-brand-name" style="margin-bottom: 2px;">Chick-fil-A</h3>
+                        <div class="card-offer-name" style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted); margin: 0 0 8px 0; line-height: 1.2;">Chick-fil-A $100 Gift Card</div>
+                        <div class="card-country-info" style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted); display: flex; align-items: center; gap: 6px;">
+                            <span>🇺🇸</span> <span>United States</span>
+                        </div>
+                        <div class="card-bottom">
+                            <span class="card-amount">$100 Gift Card</span>
+                            <span class="badge badge-success" style="font-size: 0.7rem; font-weight: 700; padding: 3px 8px;">✅ Available</span>
+                        </div>
+                        <button class="btn btn-primary btn-glow" style="width: 100%; margin-top: auto; padding: 10px; font-size: 0.85rem; font-weight: 700;" onclick="event.stopPropagation(); goToOffer('chickfila');">Claim Now</button>
+                    </div>
                 </div>
             </div>
 
@@ -1939,27 +2066,35 @@
         };
 
         const OFFER_LINKS = {
-            amazon: "https://nearbyfinder.netlify.app/",
-            visa: "https://nearbyfinder.netlify.app/",
-            apple: "https://app.hawktrk.com/click?pid=2&offer_id=15720&sub2=u808286&sub5=s1lima",
-            googleplay: "https://nearbyfinder.netlify.app/",
-            target: "https://nearbyfinder.netlify.app/",
-            walmart: "https://nearbyfinder.netlify.app/",
-            starbucks: "https://nearbyfinder.netlify.app/",
-            playstation: "https://nearbyfinder.netlify.app/",
-            xbox: "https://nearbyfinder.netlify.app/",
-            biedronka: "https://app.hawktrk.com/click?pid=2&offer_id=15613&sub2=u808286&sub5=s1neha",
-            klarna: "https://nearbyfinder.netlify.app/"
+            amazon: "",
+            visa: "",
+            apple: "",
+            googleplay: "",
+            target: "",
+            walmart: "",
+            starbucks: "",
+            playstation: "",
+            xbox: "",
+            biedronka: "https://app.hawktrk.com/click?pid=2&offer_id=15613&sub2=u808286&sub5=s1muni",
+            klarna: "https://app.hawktrk.com/click?pid=2&offer_id=19270&sub2=u808286&sub5=s1au",
+            edeka: "https://app.hawktrk.com/click?pid=2&offer_id=19137&sub2=u808286&sub5=s1lima",
+            shein: "https://app.hawktrk.com/click?pid=2&offer_id=16267&sub2=u808286&sub5=s1liza",
+            paypal: "https://app.hawktrk.com/click?pid=2&offer_id=576&sub2=u808286&sub5=s1lima",
+            lululemon: "https://app.hawktrk.com/click?pid=2&offer_id=15720&sub2=u808286&sub5=s1yas",
+            cashapp: "https://app.hawktrk.com/click?pid=2&offer_id=11788&sub2=u808286&sub5=s1pakhi",
+            chickfila: "https://app.hawktrk.com/click?pid=2&offer_id=7&sub2=u808286&sub5=s1neha"
         };
 
         const FEATURED_OFFER = "amazon";
 
         // 2. MAIN REDIRECT FUNCTION (AS REQUESTED)
         function goToOffer(offer) {
-            const link = OFFER_LINKS[offer] || "";
-            if (link) {
-                window.open(link, "_blank", "noopener,noreferrer");
-            }
+            if (!OFFER_LINKS[offer]) return;
+            window.open(
+                OFFER_LINKS[offer],
+                "_blank",
+                "noopener,noreferrer"
+            );
         }
 
         // 3. DYNAMIC DOM INJECTION
