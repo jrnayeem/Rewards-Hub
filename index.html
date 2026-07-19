@@ -173,7 +173,7 @@
             width: 0%;
             background: linear-gradient(90deg, var(--primary), var(--secondary));
             border-radius: 10px;
-            animation: fillProgress 2.2s forwards cubic-bezier(0.1, 0.8, 0.3, 1);
+            animation: fillProgress 1.2s forwards cubic-bezier(0.1, 0.8, 0.3, 1);
         }
 
         .load-text {
@@ -594,6 +594,8 @@
         .bg-lululemon { background: linear-gradient(135deg, #E31B23 0%, #860000 100%); }
         .bg-cashapp { background: linear-gradient(135deg, #00D632 0%, #009E24 100%); }
         .bg-chickfila { background: linear-gradient(135deg, #E51636 0%, #9E0016 100%); }
+        .bg-slotswise { background: linear-gradient(135deg, #7C3AED 0%, #C026D3 100%); }
+        .bg-fsl { background: linear-gradient(135deg, #059669 0%, #10B981 100%); }
 
         .featured-card::after {
             content: '';
@@ -1097,6 +1099,93 @@
             }
         }
 
+        /* Country Filter Pills CSS */
+        .country-filter-container {
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            width: 100%;
+        }
+
+        .filter-label {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            flex-shrink: 0;
+        }
+
+        .country-pills-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .country-filter-container {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                margin-bottom: 24px;
+            }
+
+            .country-pills-row {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                padding-bottom: 8px;
+                margin-bottom: -8px;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none; /* Firefox */
+                width: 100%;
+            }
+
+            .country-pills-row::-webkit-scrollbar {
+                display: none; /* Safari and Chrome */
+            }
+        }
+
+        .country-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: 100px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            color: var(--text-dark);
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            user-select: none;
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                        background-color 0.25s ease,
+                        border-color 0.25s ease,
+                        color 0.25s ease,
+                        box-shadow 0.25s ease;
+            box-shadow: var(--card-shadow);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .country-pill:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary);
+            box-shadow: 0 4px 15px rgba(108, 99, 255, 0.2);
+            color: var(--primary);
+        }
+
+        .country-pill.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: #ffffff;
+            box-shadow: 0 4px 20px rgba(108, 99, 255, 0.4);
+        }
+
         /* Header right flex area containing toggle and CTA button */
         .header-right-area {
             display: flex;
@@ -1365,6 +1454,11 @@
                 <div class="section-header reveal-element">
                     <h2 class="section-title">Featured Rewards</h2>
                     <p class="section-desc">Select your preferred brand to start verification.</p>
+                </div>
+                <!-- Country Filter Section -->
+                <div class="country-filter-container reveal-element">
+                    <span class="filter-label">Filter by Country:</span>
+                    <div id="country-filter-pills-wrap" style="width: 100%; overflow: hidden;"></div>
                 </div>
                 <div class="featured-cards-grid">
                     <!-- Amazon -->
@@ -1741,6 +1835,70 @@
                         </div>
                         <button class="btn btn-primary btn-glow" style="width: 100%; margin-top: auto; padding: 10px; font-size: 0.85rem; font-weight: 700;" onclick="event.stopPropagation(); goToOffer('cashapp1000');">Claim Now</button>
                     </div>
+
+                    <!-- SlotsWise -->
+                    <div class="featured-card glass reveal-element" onclick="goToOffer('slotswise')">
+                        <div class="brand-icon-wrap bg-slotswise">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7V7h10v6z" fill="#FFFFFF" />
+                                <circle cx="9" cy="10" r="1.5" fill="#FFCC00" />
+                                <circle cx="12" cy="10" r="1.5" fill="#FFCC00" />
+                                <circle cx="15" cy="10" r="1.5" fill="#FFCC00" />
+                                <path d="M21 8h1.5a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5H21V8z" fill="#FFFFFF" />
+                                <circle cx="22.5" cy="8" r="1.5" fill="#E30613" />
+                            </svg>
+                        </div>
+                        <h3 class="card-brand-name" style="margin-bottom: 2px;">SlotsWise</h3>
+                        <div class="card-offer-name" style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted); margin: 0 0 8px 0; line-height: 1.2;">Play and Get Free Spins</div>
+                        <div class="card-country-info" style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted); display: flex; align-items: center; gap: 6px;">
+                            <span>🇬🇧</span> <span>United Kingdom</span>
+                        </div>
+                        <div class="card-bottom">
+                            <span class="card-amount" style="font-size: 1.1rem; color: var(--primary);">Free Spins</span>
+                            <span class="badge badge-success" style="font-size: 0.7rem; font-weight: 700; padding: 3px 8px;">✅ Available</span>
+                        </div>
+                        <button class="btn btn-primary btn-glow" style="width: 100%; margin-top: auto; padding: 10px; font-size: 0.85rem; font-weight: 700;" onclick="event.stopPropagation(); goToOffer('slotswise');">Claim Now</button>
+                    </div>
+
+                    <!-- FSL -->
+                    <div class="featured-card glass reveal-element" onclick="goToOffer('fsl')">
+                        <div class="brand-icon-wrap bg-fsl">
+                            <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="45" fill="none" stroke="#FFFFFF" stroke-width="8"/>
+                                <path d="M30 25h40M30 50h30M30 75h20" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-brand-name" style="margin-bottom: 2px;">FSL</h3>
+                        <div class="card-offer-name" style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted); margin: 0 0 8px 0; line-height: 1.2;">200 Free Spins</div>
+                        <div class="card-country-info" style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted); display: flex; align-items: center; gap: 6px;">
+                            <span>🇬🇧</span> <span>United Kingdom</span>
+                        </div>
+                        <div class="card-bottom">
+                            <span class="card-amount" style="font-size: 1.1rem; color: var(--primary);">200 Free Spins</span>
+                            <span class="badge badge-success" style="font-size: 0.7rem; font-weight: 700; padding: 3px 8px;">✅ Available</span>
+                        </div>
+                        <button class="btn btn-primary btn-glow" style="width: 100%; margin-top: auto; padding: 10px; font-size: 0.85rem; font-weight: 700;" onclick="event.stopPropagation(); goToOffer('fsl');">Claim Now</button>
+                    </div>
+
+                    <!-- Amazon UK -->
+                    <div class="featured-card glass reveal-element" onclick="goToOffer('amazonuk')">
+                        <div class="brand-icon-wrap bg-amazon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.15 15.56c-.53-.41-1.3-.23-1.85.25-.83.72-2.15 1.54-3.75 1.54-2.15 0-3.66-1.12-4.3-2.48l11.12-1.39c.28-.03.52-.22.58-.5a6.45 6.45 0 0 0-6.14-7.58c-4.04 0-7.23 3.32-7.23 7.55 0 4.18 3.1 7.6 7.6 7.6 2.45 0 4.54-1 5.86-2.58.33-.4.24-.95-.15-1.26l-1.64-1.15zM12.06 8.04c1.83 0 3.17 1.25 3.37 2.92l-6.84.85c.34-1.93 1.63-3.77 3.47-3.77z" fill="#FF9900"/>
+                                <path d="M3.2 20.3c4.2 3.1 10.4 4.1 15 2.1.8-.3 1-.7.4-1.1-2.4-1.6-6-2.6-9.5-2.6-2.4 0-4.6.4-5.9.8-.7.2-.7.6 0 .8z" fill="#FF9900"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-brand-name" style="margin-bottom: 2px;">Amazon</h3>
+                        <div class="card-offer-name" style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted); margin: 0 0 8px 0; line-height: 1.2;">Amazon Mystery Box £100</div>
+                        <div class="card-country-info" style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted); display: flex; align-items: center; gap: 6px;">
+                            <span>🇬🇧</span> <span>United Kingdom</span>
+                        </div>
+                        <div class="card-bottom">
+                            <span class="card-amount" style="font-size: 1.1rem; color: var(--primary);">£100 Mystery Box</span>
+                            <span class="badge badge-success" style="font-size: 0.7rem; font-weight: 700; padding: 3px 8px;">✅ Available</span>
+                        </div>
+                        <button class="btn btn-primary btn-glow" style="width: 100%; margin-top: auto; padding: 10px; font-size: 0.85rem; font-weight: 700;" onclick="event.stopPropagation(); goToOffer('amazonuk');">Claim Now</button>
+                    </div>
                 </div>
             </div>
 
@@ -2102,7 +2260,10 @@
             lululemon: "https://app.hawktrk.com/click?pid=2&offer_id=15720&sub2=u808286&sub5=s1yas",
             cashapp: "https://app.hawktrk.com/click?pid=2&offer_id=11788&sub2=u808286&sub5=s1pakhi",
             chickfila: "https://app.hawktrk.com/click?pid=2&offer_id=7&sub2=u808286&sub5=s1neha",
-            cashapp1000: "https://app.hawktrk.com/click?pid=2&offer_id=21684&sub2=u808286&sub5=s1lima"
+            cashapp1000: "https://app.hawktrk.com/click?pid=2&offer_id=21684&sub2=u808286&sub5=s1lima",
+            slotswise: "https://app.hawktrk.com/click?pid=2&offer_id=19279&sub2=u808286&sub5=s1sadi",
+            fsl: "https://app.hawktrk.com/click?pid=2&offer_id=19342&sub2=u808286&sub5=s1lima",
+            amazonuk: "https://app.hawktrk.com/click?pid=2&offer_id=19818&sub2=u808286&sub5=s1dim"
         };
 
         const FEATURED_OFFER = "amazon";
@@ -2124,14 +2285,109 @@
             document.querySelectorAll(".dynamic-flag-text").forEach(el => el.textContent = OFFER.flag);
         }
 
-        // 4. LOADING SCREEN DISMISSAL
-        window.addEventListener('load', () => {
+        // 3.5. COUNTRY FILTER INTERACTIVITY (PREMIUM HORIZONTAL SELECTOR)
+        function initCountryFilter() {
+            const cards = document.querySelectorAll('.featured-card');
+            const countryMap = new Map();
+
+            // Scan each card to get its current country info
+            cards.forEach(card => {
+                const countryInfo = card.querySelector('.card-country-info');
+                if (countryInfo) {
+                    const spans = countryInfo.querySelectorAll('span');
+                    let flag = '';
+                    let country = '';
+                    if (spans.length >= 2) {
+                        flag = spans[0].textContent.trim();
+                        country = spans[1].textContent.trim();
+                    } else {
+                        const text = countryInfo.textContent.trim();
+                        const match = text.match(/([\uD83C-\uDBFF\uDC00-\uDFFF]{2})\s*(.*)/);
+                        if (match) {
+                            flag = match[1];
+                            country = match[2];
+                        }
+                    }
+
+                    if (country && flag) {
+                        countryMap.set(country, flag);
+                        card.setAttribute('data-country', country);
+                    }
+                }
+            });
+
+            // Generate Filter UI dynamically!
+            const pillsContainer = document.getElementById('country-filter-pills-wrap');
+            if (!pillsContainer) return;
+
+            pillsContainer.innerHTML = '';
+
+            const pillsRow = document.createElement('div');
+            pillsRow.className = 'country-pills-row';
+
+            // Create "All Countries" pill
+            const allPill = document.createElement('div');
+            allPill.className = 'country-pill active';
+            allPill.dataset.country = 'all';
+            allPill.innerHTML = `<span>🌍</span> All Countries`;
+            pillsRow.appendChild(allPill);
+
+            // Create individual country pills sorted alphabetically
+            const sortedCountries = Array.from(countryMap.keys()).sort();
+            sortedCountries.forEach(country => {
+                const flag = countryMap.get(country);
+                const pill = document.createElement('div');
+                pill.className = 'country-pill';
+                pill.dataset.country = country;
+                pill.innerHTML = `<span>${flag}</span> ${country}`;
+                pillsRow.appendChild(pill);
+            });
+
+            pillsContainer.appendChild(pillsRow);
+
+            // Handle pill clicks for instant filtering
+            const pills = pillsRow.querySelectorAll('.country-pill');
+            pills.forEach(pill => {
+                pill.addEventListener('click', () => {
+                    pills.forEach(p => p.classList.remove('active'));
+                    pill.classList.add('active');
+
+                    const selectedCountry = pill.dataset.country;
+
+                    cards.forEach(card => {
+                        const cardCountry = card.getAttribute('data-country');
+                        if (selectedCountry === 'all' || cardCountry === selectedCountry) {
+                            card.style.display = '';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+
+        // 4. LOADING SCREEN DISMISSAL (WITH AUTO-DISMISS FAILSAFE)
+        let loaderDismissed = false;
+        function dismissLoader() {
+            if (loaderDismissed) return;
+            loaderDismissed = true;
             const loader = document.getElementById('loading-screen');
-            setTimeout(() => {
+            if (loader) {
                 loader.style.opacity = '0';
-                loader.style.visibility = 'hidden';
-            }, 2200); // Wait for the visual loaders to finish progress animation
+                setTimeout(() => {
+                    loader.style.visibility = 'hidden';
+                }, 500); // Wait for the smooth CSS opacity transition
+            }
+        }
+
+        // Wait 1200ms to let the loading bar's visual progress animation finish, then dismiss
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(dismissLoader, 1200);
         });
+
+        // Failsafe backup: Unconditionally dismiss loader after 2.5 seconds
+        // in case any external images, webfonts, or subframes are extremely slow or stuck.
+        setTimeout(dismissLoader, 2500);
 
         // 5. STICKY HEADER SCROLL EFFECT
         window.addEventListener('scroll', () => {
@@ -2262,6 +2518,7 @@
         // INITIALIZE ALL
         document.addEventListener('DOMContentLoaded', () => {
             updateDynamicElements();
+            initCountryFilter();
             startCountdown();
             initScrollReveals();
             startStatsIncrement();
